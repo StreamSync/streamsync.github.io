@@ -25,6 +25,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
+import Script from "next/script";
 
 // Mock current signup data - in real app this would come from API
 const currentSignups = {
@@ -127,13 +128,12 @@ export default function NewsletterPage() {
             <span className="text-green-400">REVOLUTION</span>
           </h1>
           <p className="text-xl sm:text-2xl font-bold text-black mb-8 max-w-3xl mx-auto">
-            Be among the first 100 to shape the future of game developer and
+            Be among the first to shape the future of game developer and
             streamer collaborations
           </p>
         </div>
 
-        {/* Progress Tracker */}
-        <div className="max-w-6xl mx-auto mb-16">
+        {/* <div className="max-w-6xl mx-auto mb-16">
           <Card className="border-4 border-black shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] bg-neutral-800">
             <CardHeader className="bg-yellow-300 border-b-4 border-black">
               <CardTitle className="flex items-center justify-center gap-3 text-3xl font-black text-black">
@@ -147,7 +147,7 @@ export default function NewsletterPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="p-8">
-              {/* Overall Progress */}
+              
               <div className="mb-12">
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="text-2xl font-black text-white">
@@ -168,9 +168,9 @@ export default function NewsletterPage() {
                 </div>
               </div>
 
-              {/* Role-specific Progress */}
+             
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Developer Progress */}
+            
                 <div className="bg-purple-600 p-6 border-4 border-white">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
@@ -194,7 +194,7 @@ export default function NewsletterPage() {
                   </p>
                 </div>
 
-                {/* Streamer Progress */}
+              
                 <div className="bg-green-400 p-6 border-4 border-white">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
@@ -220,9 +220,8 @@ export default function NewsletterPage() {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </div> */}
 
-        {/* Newsletter Signup */}
         <div className="max-w-2xl mx-auto">
           <Card className="border-4 border-black shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]">
             <CardHeader className="bg-black border-b-4 border-black">
@@ -237,8 +236,8 @@ export default function NewsletterPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-8">
-                {/* Role Selection */}
+              {/* <form onSubmit={handleSubmit} className="space-y-8">
+               
                 <div>
                   <Label className="text-lg font-black text-black mb-4 block">
                     CHOOSE YOUR ROLE:
@@ -281,7 +280,7 @@ export default function NewsletterPage() {
                   </div>
                 </div>
 
-                {/* Email Input */}
+               
                 <div>
                   <Label
                     htmlFor="email"
@@ -300,40 +299,8 @@ export default function NewsletterPage() {
                   />
                 </div>
 
-                {/* Benefits List */}
-                <div className="bg-gray-100 p-6 border-4 border-black">
-                  <h3 className="text-lg font-black text-black mb-4">
-                    WHAT YOU'LL GET:
-                  </h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-3">
-                      <div className="bg-green-400 p-1 border-2 border-black">
-                        <TrendingUp className="h-4 w-4 text-black" />
-                      </div>
-                      <span className="font-bold text-black">
-                        Early access to the platform
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="bg-green-400 p-1 border-2 border-black">
-                        <Users className="h-4 w-4 text-black" />
-                      </div>
-                      <span className="font-bold text-black">
-                        Priority matching with perfect partners
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="bg-green-400 p-1 border-2 border-black">
-                        <Zap className="h-4 w-4 text-black" />
-                      </div>
-                      <span className="font-bold text-black">
-                        Exclusive launch updates and tips
-                      </span>
-                    </li>
-                  </ul>
-                </div>
+              
 
-                {/* Submit Button */}
                 <Button
                   type="submit"
                   disabled={!email || !selectedRole}
@@ -341,7 +308,55 @@ export default function NewsletterPage() {
                 >
                   JOIN THE EARLY ACCESS LIST
                 </Button>
-              </form>
+              </form> */}
+              <div className="bg-gray-100 p-6 border-4 border-black">
+                <h3 className="text-lg font-black text-black mb-4">
+                  WHAT YOU'LL GET:
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <div className="bg-green-400 p-1 border-2 border-black">
+                      <TrendingUp className="h-4 w-4 text-black" />
+                    </div>
+                    <span className="font-bold text-black">
+                      Early access to the platform
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="bg-green-400 p-1 border-2 border-black">
+                      <Users className="h-4 w-4 text-black" />
+                    </div>
+                    <span className="font-bold text-black">
+                      Priority matching with perfect partners
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="bg-green-400 p-1 border-2 border-black">
+                      <Zap className="h-4 w-4 text-black" />
+                    </div>
+                    <span className="font-bold text-black">
+                      Exclusive launch updates and tips
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <Script
+                async
+                src="https://subscribe-forms.beehiiv.com/embed.js"
+              ></Script>
+
+              <iframe
+                src="https://subscribe-forms.beehiiv.com/36094414-069f-4510-b17a-e8c84e791362"
+                className="beehiiv-embed flex justify-center items-center w-full"
+                data-test-id="beehiiv-embed"
+                scrolling="no"
+                style={{
+                  margin: 0,
+                  borderRadius: "0px 0px 0px 0px",
+                  backgroundColor: "transparent",
+                  boxShadow: "0 0 #0000",
+                }}
+              ></iframe>
             </CardContent>
           </Card>
         </div>
@@ -352,7 +367,7 @@ export default function NewsletterPage() {
             Join indie developers and streamers who are already waiting for
             launch
           </p>
-          <div className="flex justify-center items-center gap-8">
+          {/* <div className="flex justify-center items-center gap-8">
             <div className="text-center">
               <div className="text-3xl font-black text-purple-600">
                 {currentSignups.developers}
@@ -366,7 +381,7 @@ export default function NewsletterPage() {
               </div>
               <div className="text-sm font-bold text-black">STREAMERS</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
